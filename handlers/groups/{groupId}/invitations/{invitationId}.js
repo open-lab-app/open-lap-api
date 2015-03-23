@@ -7,7 +7,7 @@ module.exports = {
      * Gets an Invitation
 
      * parameters: groupId, invitationId
-     * produces: 
+     * produces:
      */
     get: function (req, res) {
         res.send(501);
@@ -16,7 +16,7 @@ module.exports = {
      * Used to update the Invitation once it's accepted
 
      * parameters: groupId, invitationId, body
-     * produces: 
+     * produces:
      */
     put: function (req, res) {
         res.send(501);

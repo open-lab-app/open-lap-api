@@ -8,7 +8,7 @@ module.exports = {
 to invite users to openLab
 
      * parameters: groupId, body
-     * produces: 
+     * produces:
      */
     post: function (req, res) {
         res.send(501);

@@ -6,7 +6,7 @@ module.exports = {
     /**
      * search for a user by name
      * parameters: name
-     * produces: 
+     * produces:
      */
     get: function getUsersByName(req, res) {
         res.send(501);

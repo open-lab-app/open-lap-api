@@ -10,16 +10,16 @@ var test = require('tape'),
 test('api', function (t) {
     var app = express();
 
-    
+
 
     app.use(swaggerize({
         api: require('./../config/spec.json'),
         handlers: path.join(__dirname, '../handlers')
     }));
 
-    
+
     t.test('test get /users/logout', function (t) {
-        
+
 
         request(app).get('/v1/users/logout')
         .expect(200)
@@ -29,6 +29,6 @@ test('api', function (t) {
             t.end();
         });
     });
-    
+
 
 });

@@ -8,7 +8,7 @@ module.exports = {
 that are members of a group
 
      * parameters: groupId
-     * produces: 
+     * produces:
      */
     get: function getUsersByGroup(req, res) {
         res.send(501);

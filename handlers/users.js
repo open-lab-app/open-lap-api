@@ -9,7 +9,7 @@ invitation token, which is generated at the
 invitation step
 
      * parameters: body, invitationId
-     * produces: 
+     * produces:
      */
     post: function createUser(req, res) {
         res.send(501);

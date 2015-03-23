@@ -10,23 +10,23 @@ var test = require('tape'),
 test('api', function (t) {
     var app = express();
 
-    
+
 
     app.use(swaggerize({
         api: require('./../config/spec.json'),
         handlers: path.join(__dirname, '../handlers')
     }));
 
-    
+
     t.test('test get /groups/{groupId}/posts/findByAuthor', function (t) {
-        
+
         var responseSchema = enjoi({
-            'type': "array", 
+            'type': "array",
             'items': {"$ref":"#/definitions/Post"}
         }, {
             '#': require('../config/spec.json')
         });
-        
+
 
         request(app).get('/v1/groups/1/posts/findByAuthor')
         .expect(200)
@@ -39,6 +39,6 @@ test('api', function (t) {
             t.end();
         });
     });
-    
+
 
 });

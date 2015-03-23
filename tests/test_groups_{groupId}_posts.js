@@ -10,7 +10,7 @@ var test = require('tape'),
 test('api', function (t) {
     var app = express();
 
-    
+
     app.use(require('body-parser')());
 
     app.use(swaggerize({
@@ -18,16 +18,16 @@ test('api', function (t) {
         handlers: path.join(__dirname, '../handlers')
     }));
 
-    
+
     t.test('test get /groups/{groupId}/posts', function (t) {
-        
+
         var responseSchema = enjoi({
-            'type': "array", 
+            'type': "array",
             'items': {"$ref":"#/definitions/Post"}
         }, {
             '#': require('../config/spec.json')
         });
-        
+
 
         request(app).get('/v1/groups/1/posts')
         .expect(200)
@@ -40,12 +40,12 @@ test('api', function (t) {
             t.end();
         });
     });
-    
+
     t.test('test post /groups/{groupId}/posts', function (t) {
-        
+
         var body = {
         };
-        
+
 
         request(app).post('/v1/groups/1/posts')
         .expect(200).send(body)
@@ -55,6 +55,6 @@ test('api', function (t) {
             t.end();
         });
     });
-    
+
 
 });

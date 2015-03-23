@@ -4,8 +4,8 @@
  */
 module.exports = {
     /**
-     * 
-     * parameters: 
+     *
+     * parameters:
      * produces: application/json
      */
     get: function logoutUser(req, res) {

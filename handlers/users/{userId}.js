@@ -6,7 +6,7 @@ module.exports = {
     /**
      * Finds a user by ID
      * parameters: userId
-     * produces: 
+     * produces:
      */
     get: function getUserById(req, res) {
         res.send(501);
@@ -14,7 +14,7 @@ module.exports = {
     /**
      * Updates a user given an ID
      * parameters: userId, body
-     * produces: 
+     * produces:
      */
     put: function updateUserById(req, res) {
         res.send(501);

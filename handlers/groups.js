@@ -9,7 +9,7 @@ Optional query param of **size** determines
 size of returned array
 
      * parameters: size
-     * produces: 
+     * produces:
      */
     get: function (req, res) {
         res.send(501);
@@ -24,7 +24,7 @@ size of returned array
         res.send(501);
     },
     /**
-     * 
+     *
      * parameters: body
      * produces: application/json
      */
