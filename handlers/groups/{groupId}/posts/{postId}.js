@@ -29,7 +29,7 @@ has write rights to, it will be deleted from the
 store
 
      * parameters: groupId, postId
-     * produces: 
+     * produces:
      */
     delete: function deletePostById(req, res) {
         res.send(501);

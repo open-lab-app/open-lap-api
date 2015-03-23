@@ -771,6 +771,7 @@ paths:
 
 definitions:
   User:
+    type: object
     properties:
       id:
         type: integer
@@ -798,12 +799,19 @@ definitions:
       groups:
         type: array
         items:
-          $ref: "#/definitions/Group"
+          type: object
+          properties:
+            name:
+              type: string
+            groupid:
+              type: integer
+              format: int64
       subscriptions:
         type: array
         items:
           $ref: "#/definitions/Subscription"
   Subscription:
+    type: object
     properties:
       id:
         type: integer
@@ -814,6 +822,7 @@ definitions:
       email:
         type: boolean
   Group:
+    type: object
     properties:
       id:
         type: integer
@@ -827,11 +836,18 @@ definitions:
       members:
         type: array
         items:
-          $ref: "#/definitions/User"
+          type: object
+          properties:
+            name:
+              type: string
+            userid:
+              type: integer
+              format: int64
       parentGroupId:
         type: integer
         format: int64
   Post:
+    type: object
     properties:
       id:
         type: integer
@@ -856,6 +872,7 @@ definitions:
         items:
           $ref: "#/definitions/Comment"
   Comment:
+    type: object
     properties:
       id:
         type: integer
@@ -866,6 +883,7 @@ definitions:
         type: integer
         format: int64
   Permission:
+    type: object
     properties:
       id:
         type: integer
@@ -876,6 +894,7 @@ definitions:
         type: integer
         format: int64
   Invitation:
+    type: object
     properties:
       id:
         type: integer
@@ -888,6 +907,7 @@ definitions:
       accepted:
         type: boolean
   DataBundle:
+    type: object
     properties:
       id:
         type: integer
@@ -902,6 +922,7 @@ definitions:
         items:
           $ref: "#/definitions/File"
   Tag:
+    type: object
     properties:
       id:
         type: integer
@@ -909,6 +930,7 @@ definitions:
       name:
         type: string
   File:
+    type: object
     properties:
       id:
         type: integer
@@ -918,6 +940,7 @@ definitions:
       fileSourceURL:
         type: string
   Login:
+    type: object
     properties:
       username:
         type: string

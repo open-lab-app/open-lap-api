@@ -6,7 +6,7 @@
   "info": {
     "version": "0.0.1",
     "title": "Openlab API",
-    "description": "This is the OpenLab API",
+    "description": "This is the OpenLab API\n",
     "termsOfService": "http://open-lab.io/terms/",
     "contact": {
       "name": "apiteam@open-lab.io"
@@ -60,7 +60,7 @@
         "tags": [
           "group"
         ],
-        "description": "Allows you to create a new `Group` object",
+        "description": "Allows you to create a new `Group` object\n",
         "operationId": "addGroup",
         "consumes": [
           "application/json"
@@ -137,7 +137,7 @@
       },
       "get": {
         "summary": "Get a bunch of gropus",
-        "description": "Gets `Group` objects.\nOptional query param of **size** determines\nsize of returned array",
+        "description": "Gets `Group` objects.\nOptional query param of **size** determines\nsize of returned array\n",
         "parameters": [
           {
             "name": "size",
@@ -175,7 +175,7 @@
           "group"
         ],
         "summary": "Find group by ID",
-        "description": "Returns a group with the specified id",
+        "description": "Returns a group with the specified id\n",
         "operationId": "getGroupById",
         "produces": [
           "application/json"
@@ -217,7 +217,7 @@
           "group"
         ],
         "summary": "Update an existing group",
-        "description": "Updates a group given an id",
+        "description": "Updates a group given an id\n",
         "operationId": "updateGroupById",
         "produces": [
           "application/json"
@@ -268,7 +268,7 @@
         ],
         "summary": "Gets all posts for a group",
         "operationId": "getPosts",
-        "description": "Gets all posts on a given group. In order to query for posts,\nyou can provide an offset, and the number of posts to return (defaults to 10).\nPosts are returned in chronological order.",
+        "description": "Gets all posts on a given group. In order to query for posts,\nyou can provide an offset, and the number of posts to return (defaults to 10).\nPosts are returned in chronological order.\n",
         "produces": [
           "application/json"
         ],
@@ -327,7 +327,7 @@
         ],
         "summary": "Add a new post to the store",
         "operationId": "addPost",
-        "description": "Adds a new post to the store, requires\nthe user to have rights to post to the\ngroup",
+        "description": "Adds a new post to the store, requires\nthe user to have rights to post to the\ngroup\n",
         "consumes": [
           "application/json"
         ],
@@ -374,7 +374,7 @@
           "post"
         ],
         "summary": "Get post by ID",
-        "description": "Gets a post given an ID, provided the user\nhas read rights to the group the post belongs to",
+        "description": "Gets a post given an ID, provided the user\nhas read rights to the group the post belongs to\n",
         "operationId": "getPostById",
         "produces": [
           "application/json"
@@ -426,7 +426,7 @@
         ],
         "summary": "Update a post by ID",
         "operationId": "updatePostById",
-        "description": "Allows updating a post by passing the\nid as part of the path",
+        "description": "Allows updating a post by passing the\nid as part of the path\n",
         "consumes": [
           "application/json"
         ],
@@ -453,7 +453,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "the body of the post to be updated,\nincluding properties to be updated.",
+            "description": "the body of the post to be updated,\nincluding properties to be updated.\n",
             "schema": {
               "$ref": "#/definitions/Post"
             }
@@ -487,7 +487,7 @@
         ],
         "summary": "Deletes a Post given an id",
         "operationId": "deletePostById",
-        "description": "If given an id of a valid post that the user\nhas write rights to, it will be deleted from the\nstore",
+        "description": "If given an id of a valid post that the user\nhas write rights to, it will be deleted from the\nstore\n",
         "parameters": [
           {
             "in": "path",
@@ -529,7 +529,7 @@
     "/groups/{groupId}/posts/findByTags": {
       "get": {
         "summary": "Finds posts by tag",
-        "description": "Multiple tags can be passed with comma-separated strings",
+        "description": "Multiple tags can be passed with comma-separated strings\n",
         "operationId": "findPostsByTags",
         "produces": [
           "application/json"
@@ -586,7 +586,7 @@
     "/groups/{groupId}/posts/findByAuthor": {
       "get": {
         "summary": "Finds posts by author",
-        "description": "Finds posts for an author",
+        "description": "Finds posts for an author\n",
         "operationId": "findPostsByAuthorId",
         "produces": [
           "application/json"
@@ -639,7 +639,7 @@
     "/groups/{groupId}/users": {
       "get": {
         "summary": "Get all the users in a group",
-        "description": "By passing a group id, returns all users\nthat are members of a group",
+        "description": "By passing a group id, returns all users\nthat are members of a group\n",
         "operationId": "getUsersByGroup",
         "responses": {
           "200": {
@@ -679,7 +679,7 @@
     "/users": {
       "post": {
         "summary": "creates a new User",
-        "description": "This creates a new user. It requires a valid\ninvitation token, which is generated at the\ninvitation step",
+        "description": "This creates a new user. It requires a valid\ninvitation token, which is generated at the\ninvitation step\n",
         "operationId": "createUser",
         "parameters": [
           {
@@ -694,7 +694,7 @@
           {
             "in": "query",
             "name": "invitationId",
-            "description": "the id of the invitation for the user's email",
+            "description": "the id of the invitation for the user's email\n",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -735,7 +735,7 @@
           {
             "in": "path",
             "name": "userId",
-            "description": "The user id to get",
+            "description": "The user id to get\n",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -782,7 +782,7 @@
           {
             "in": "path",
             "name": "userId",
-            "description": "The user id to update",
+            "description": "The user id to update\n",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -791,7 +791,7 @@
             "in": "body",
             "name": "body",
             "required": true,
-            "description": "The user object to be updated",
+            "description": "The user object to be updated\n",
             "schema": {
               "$ref": "#/definitions/User"
             }
@@ -898,7 +898,7 @@
     "/users/login": {
       "post": {
         "summary": "logs the user in",
-        "description": "This endpoint allows a user to login onto the system",
+        "description": "This endpoint allows a user to login onto the system\n",
         "operationId": "loginUser",
         "produces": [
           "application/json"
@@ -964,7 +964,7 @@
     "/groups/{groupId}/invitations": {
       "post": {
         "summary": "Creates an invitation",
-        "description": "This endpoint allows users with admin rights to a group to\nto invite users to openLab",
+        "description": "This endpoint allows users with admin rights to a group to\nto invite users to openLab\n",
         "responses": {
           "200": {
             "description": "successful operation",
@@ -977,7 +977,7 @@
           {
             "in": "path",
             "name": "groupId",
-            "description": "The id of the group to see invitations for",
+            "description": "The id of the group to see invitations for\n",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -1009,7 +1009,7 @@
     "/groups/{groupId}/invitations/{invitationId}": {
       "get": {
         "summary": "Gets an Invitation",
-        "description": "Gets an Invitation",
+        "description": "Gets an Invitation\n",
         "responses": {
           "200": {
             "description": "Succesful Operation",
@@ -1028,7 +1028,7 @@
           {
             "in": "path",
             "name": "groupId",
-            "description": "the id of the group that the invitation is for",
+            "description": "the id of the group that the invitation is for\n",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -1056,7 +1056,7 @@
       },
       "put": {
         "summary": "Updates an Invitation",
-        "description": "Used to update the Invitation once it's accepted",
+        "description": "Used to update the Invitation once it's accepted\n",
         "responses": {
           "400": {
             "description": "Invalid Invitation id"
@@ -1072,7 +1072,7 @@
           {
             "in": "path",
             "name": "groupId",
-            "description": "the id of the group that the invitation is for",
+            "description": "the id of the group that the invitation is for\n",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -1088,7 +1088,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "the body of the invitiation to be updated",
+            "description": "the body of the invitiation to be updated\n",
             "schema": {
               "$ref": "#/definitions/Invitation"
             }
@@ -1099,6 +1099,7 @@
   },
   "definitions": {
     "User": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -1137,7 +1138,16 @@
         "groups": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Group"
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "groupid": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
           }
         },
         "subscriptions": {
@@ -1149,6 +1159,7 @@
       }
     },
     "Subscription": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -1163,6 +1174,7 @@
       }
     },
     "Group": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -1180,7 +1192,16 @@
         "members": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/User"
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "userid": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
           }
         },
         "parentGroupId": {
@@ -1190,6 +1211,7 @@
       }
     },
     "Post": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -1226,6 +1248,7 @@
       }
     },
     "Comment": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -1241,6 +1264,7 @@
       }
     },
     "Permission": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -1256,6 +1280,7 @@
       }
     },
     "Invitation": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -1274,6 +1299,7 @@
       }
     },
     "DataBundle": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -1295,6 +1321,7 @@
       }
     },
     "Tag": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -1306,6 +1333,7 @@
       }
     },
     "File": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -1320,6 +1348,7 @@
       }
     },
     "Login": {
+      "type": "object",
       "properties": {
         "username": {
           "type": "string"
