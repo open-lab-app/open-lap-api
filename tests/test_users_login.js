@@ -14,7 +14,7 @@ test('api', function (t) {
     app.use(require('body-parser')());
 
     app.use(swaggerize({
-        api: require('./../config/spec.yaml'),
+        api: require('./../config/spec.json'),
         handlers: path.join(__dirname, '../handlers')
     }));
 
@@ -27,7 +27,7 @@ test('api', function (t) {
         var responseSchema = enjoi({
             'type': "string"
         }, {
-            '#': require('../config/spec.yaml')
+            '#': require('../config/spec.json')
         });
         
 

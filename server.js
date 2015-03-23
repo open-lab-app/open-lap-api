@@ -17,7 +17,7 @@ app.get('/api', function (req, res) {
 });
 
 app.use(swaggerize({
-    api: path.resolve('./config/spec.yaml'),
+    api: path.resolve('./config/spec.json'),
     handlers: path.resolve('./handlers')
 }));
 

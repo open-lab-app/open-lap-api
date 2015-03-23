@@ -13,7 +13,7 @@ test('api', function (t) {
     
 
     app.use(swaggerize({
-        api: require('./../config/spec.yaml'),
+        api: require('./../config/spec.json'),
         handlers: path.join(__dirname, '../handlers')
     }));
 
@@ -25,7 +25,7 @@ test('api', function (t) {
         .expect(200)
         .end(function (err, res) {
             t.ok(!err, 'get /users/logout no error.');
-            t.strictEqual(res.statusCode, default, 'get /users/logout default status.');
+            t.strictEqual(res.statusCode, 200, 'get /users/logout 200 status.');
             t.end();
         });
     });

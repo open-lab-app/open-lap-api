@@ -15,7 +15,7 @@ test('api', function (t) {
     app.use(require('body-parser')());
 
     app.use(swaggerize({
-        api: require('./../config/spec.yaml'),
+        api: require('./../config/spec.json'),
         handlers: path.join(__dirname, '../handlers')
     }));
 
@@ -27,7 +27,7 @@ test('api', function (t) {
             'type': "array", 
             'items': {"$ref":"#/definitions/Group"}
         }, {
-            '#': require('../config/spec.yaml')
+            '#': require('../config/spec.json')
         });
         
 

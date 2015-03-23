@@ -1,53 +1,53 @@
 swagger: '2.0'
 info:
   version: "0.0.1"
-  title: Openlab API
+  title: "Openlab API"
   description: |
     This is the OpenLab API
-  termsOfService: http://open-lab.io/terms/
+  termsOfService: "http://open-lab.io/terms/"
   contact:
-    name: apiteam@open-lab.io
+    name: "apiteam@open-lab.io"
   license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
-host: api.open-lab.io
-basePath: /v1
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "api.open-lab.io"
+basePath: "/v1"
 schemes:
-  - http
-  - https
+  - "http"
+  - "https"
 security:
   - openLabImplicit:
-    - user
-    - user:email
-    - read:post
-    - write:post
-    - comment:post
-    - read:group
-    - post:group
-    - admin:group
+    - "user"
+    - "user:email"
+    - "read:post"
+    - "write:post"
+    - "comment:post"
+    - "read:group"
+    - "post:group"
+    - "admin:group"
 securityDefinitions:
   openLabImplicit:
-    type: oauth2
-    authorizationUrl: http://api.open-lab.io/api/oauth/dialog
-    flow: implicit
+    type: "oauth2"
+    authorizationUrl: "http://api.open-lab.io/api/oauth/dialog"
+    flow: "implicit"
     scopes:
-      user: Grants read/write access to profile info, includes user:email
-      user:email: Grants read access to a user's email addresses.
-      read:post: Grants read access to a post
-      write:post: Grants write access to a post, allowing to change the contents
-      comment:post: Grants comment access to a post, allowing to create comments on a post
-      read:group: Grants read access to a group, allowing to see all posts and users
-      post:group: Grants write access to a groups' posts, allowing the user to create new posts in the group
-      admin:group: Grants admin access to a group, allowing to add and remove users to it, as well as inviting other users
+      user: "Grants read/write access to profile info, includes user:email"
+      user:email: "Grants read access to a user's email addresses."
+      read:post: "Grants read access to a post"
+      write:post: "Grants write access to a post, allowing to change the contents"
+      comment:post: "Grants comment access to a post, allowing to create comments on a post"
+      read:group: "Grants read access to a group, allowing to see all posts and users"
+      post:group: "Grants write access to a groups' posts, allowing the user to create new posts in the group"
+      admin:group: "Grants admin access to a group, allowing to add and remove users to it, as well as inviting other users"
 paths:
   /groups:
     post:
-      summary: Create a new group
+      summary: "Create a new group"
       tags:
         - group
       description: |
         Allows you to create a new `Group` object
-      operationId: addGroup
+      operationId: "addGroup"
       consumes:
         - application/json
       produces:
@@ -667,7 +667,7 @@ paths:
         - application/json
       parameters: []
       responses:
-        default:
+        "200":
           description: successful operation
   /groups/{groupId}/invitations:
     post:

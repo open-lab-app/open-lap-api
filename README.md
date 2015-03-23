@@ -6,7 +6,7 @@
   "info": {
     "version": "0.0.1",
     "title": "Openlab API",
-    "description": "This is the OpenLab API\n",
+    "description": "This is the OpenLab API",
     "termsOfService": "http://open-lab.io/terms/",
     "contact": {
       "name": "apiteam@open-lab.io"
@@ -60,7 +60,7 @@
         "tags": [
           "group"
         ],
-        "description": "Allows you to create a new `Group` object\n",
+        "description": "Allows you to create a new `Group` object",
         "operationId": "addGroup",
         "consumes": [
           "application/json"
@@ -137,7 +137,7 @@
       },
       "get": {
         "summary": "Get a bunch of gropus",
-        "description": "Gets `Group` objects.\nOptional query param of **size** determines\nsize of returned array\n",
+        "description": "Gets `Group` objects.\nOptional query param of **size** determines\nsize of returned array",
         "parameters": [
           {
             "name": "size",
@@ -175,7 +175,7 @@
           "group"
         ],
         "summary": "Find group by ID",
-        "description": "Returns a group with the specified id\n",
+        "description": "Returns a group with the specified id",
         "operationId": "getGroupById",
         "produces": [
           "application/json"
@@ -217,7 +217,7 @@
           "group"
         ],
         "summary": "Update an existing group",
-        "description": "Updates a group given an id\n",
+        "description": "Updates a group given an id",
         "operationId": "updateGroupById",
         "produces": [
           "application/json"
@@ -268,7 +268,7 @@
         ],
         "summary": "Gets all posts for a group",
         "operationId": "getPosts",
-        "description": "Gets all posts on a given group. In order to query for posts,\nyou can provide an offset, and the number of posts to return (defaults to 10).\nPosts are returned in chronological order.\n",
+        "description": "Gets all posts on a given group. In order to query for posts,\nyou can provide an offset, and the number of posts to return (defaults to 10).\nPosts are returned in chronological order.",
         "produces": [
           "application/json"
         ],
@@ -327,7 +327,7 @@
         ],
         "summary": "Add a new post to the store",
         "operationId": "addPost",
-        "description": "Adds a new post to the store, requires\nthe user to have rights to post to the\ngroup\n",
+        "description": "Adds a new post to the store, requires\nthe user to have rights to post to the\ngroup",
         "consumes": [
           "application/json"
         ],
@@ -374,7 +374,7 @@
           "post"
         ],
         "summary": "Get post by ID",
-        "description": "Gets a post given an ID, provided the user\nhas read rights to the group the post belongs to\n",
+        "description": "Gets a post given an ID, provided the user\nhas read rights to the group the post belongs to",
         "operationId": "getPostById",
         "produces": [
           "application/json"
@@ -426,7 +426,7 @@
         ],
         "summary": "Update a post by ID",
         "operationId": "updatePostById",
-        "description": "Allows updating a post by passing the\nid as part of the path\n",
+        "description": "Allows updating a post by passing the\nid as part of the path",
         "consumes": [
           "application/json"
         ],
@@ -453,7 +453,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "the body of the post to be updated,\nincluding properties to be updated.\n",
+            "description": "the body of the post to be updated,\nincluding properties to be updated.",
             "schema": {
               "$ref": "#/definitions/Post"
             }
@@ -487,7 +487,7 @@
         ],
         "summary": "Deletes a Post given an id",
         "operationId": "deletePostById",
-        "description": "If given an id of a valid post that the user\nhas write rights to, it will be deleted from the\nstore\n",
+        "description": "If given an id of a valid post that the user\nhas write rights to, it will be deleted from the\nstore",
         "parameters": [
           {
             "in": "path",
@@ -529,7 +529,7 @@
     "/groups/{groupId}/posts/findByTags": {
       "get": {
         "summary": "Finds posts by tag",
-        "description": "Multiple tags can be passed with comma-separated strings\n",
+        "description": "Multiple tags can be passed with comma-separated strings",
         "operationId": "findPostsByTags",
         "produces": [
           "application/json"
@@ -586,7 +586,7 @@
     "/groups/{groupId}/posts/findByAuthor": {
       "get": {
         "summary": "Finds posts by author",
-        "description": "Finds posts for an author\n",
+        "description": "Finds posts for an author",
         "operationId": "findPostsByAuthorId",
         "produces": [
           "application/json"
@@ -639,7 +639,7 @@
     "/groups/{groupId}/users": {
       "get": {
         "summary": "Get all the users in a group",
-        "description": "By passing a group id, returns all users\nthat are members of a group\n",
+        "description": "By passing a group id, returns all users\nthat are members of a group",
         "operationId": "getUsersByGroup",
         "responses": {
           "200": {
@@ -679,7 +679,7 @@
     "/users": {
       "post": {
         "summary": "creates a new User",
-        "description": "This creates a new user. It requires a valid\ninvitation token, which is generated at the\ninvitation step\n",
+        "description": "This creates a new user. It requires a valid\ninvitation token, which is generated at the\ninvitation step",
         "operationId": "createUser",
         "parameters": [
           {
@@ -694,7 +694,7 @@
           {
             "in": "query",
             "name": "invitationId",
-            "description": "the id of the invitation for the user's email\n",
+            "description": "the id of the invitation for the user's email",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -735,7 +735,7 @@
           {
             "in": "path",
             "name": "userId",
-            "description": "The user id to get\n",
+            "description": "The user id to get",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -782,7 +782,7 @@
           {
             "in": "path",
             "name": "userId",
-            "description": "The user id to update\n",
+            "description": "The user id to update",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -791,7 +791,7 @@
             "in": "body",
             "name": "body",
             "required": true,
-            "description": "The user object to be updated\n",
+            "description": "The user object to be updated",
             "schema": {
               "$ref": "#/definitions/User"
             }
@@ -898,7 +898,7 @@
     "/users/login": {
       "post": {
         "summary": "logs the user in",
-        "description": "This endpoint allows a user to login onto the system\n",
+        "description": "This endpoint allows a user to login onto the system",
         "operationId": "loginUser",
         "produces": [
           "application/json"
@@ -955,7 +955,7 @@
         ],
         "parameters": [],
         "responses": {
-          "default": {
+          "200": {
             "description": "successful operation"
           }
         }
@@ -964,7 +964,7 @@
     "/groups/{groupId}/invitations": {
       "post": {
         "summary": "Creates an invitation",
-        "description": "This endpoint allows users with admin rights to a group to\nto invite users to openLab\n",
+        "description": "This endpoint allows users with admin rights to a group to\nto invite users to openLab",
         "responses": {
           "200": {
             "description": "successful operation",
@@ -977,7 +977,7 @@
           {
             "in": "path",
             "name": "groupId",
-            "description": "The id of the group to see invitations for\n",
+            "description": "The id of the group to see invitations for",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -1009,7 +1009,7 @@
     "/groups/{groupId}/invitations/{invitationId}": {
       "get": {
         "summary": "Gets an Invitation",
-        "description": "Gets an Invitation\n",
+        "description": "Gets an Invitation",
         "responses": {
           "200": {
             "description": "Succesful Operation",
@@ -1028,7 +1028,7 @@
           {
             "in": "path",
             "name": "groupId",
-            "description": "the id of the group that the invitation is for\n",
+            "description": "the id of the group that the invitation is for",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -1056,7 +1056,7 @@
       },
       "put": {
         "summary": "Updates an Invitation",
-        "description": "Used to update the Invitation once it's accepted\n",
+        "description": "Used to update the Invitation once it's accepted",
         "responses": {
           "400": {
             "description": "Invalid Invitation id"
@@ -1072,7 +1072,7 @@
           {
             "in": "path",
             "name": "groupId",
-            "description": "the id of the group that the invitation is for\n",
+            "description": "the id of the group that the invitation is for",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -1088,7 +1088,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "the body of the invitiation to be updated\n",
+            "description": "the body of the invitiation to be updated",
             "schema": {
               "$ref": "#/definitions/Invitation"
             }
