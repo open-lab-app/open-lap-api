@@ -10,8 +10,6 @@ var test = require('tape'),
 test('api', function (t) {
     var app = express();
 
-
-    app.use(require('body-parser')());
     app.use(require('body-parser')());
 
     app.use(swaggerize({
