@@ -4,7 +4,7 @@ function Post(options) {
     if (!options) {
         options = {};
     }
-
+    
     this.id = options.id;
     this.author = options.author;
     this.dataBundle = options.dataBundle;

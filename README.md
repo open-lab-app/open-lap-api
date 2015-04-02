@@ -6,7 +6,7 @@
   "info": {
     "version": "0.0.1",
     "title": "Openlab API",
-    "description": "This is the OpenLab API\n",
+    "description": "This is the OpenLab API",
     "termsOfService": "http://open-lab.io/terms/",
     "contact": {
       "name": "apiteam@open-lab.io"
@@ -92,57 +92,23 @@
           }
         ]
       },
-      "put": {
-        "tags": [
-          "group"
-        ],
-        "summary": "Update an existing Group",
-        "description": "",
-        "operationId": "updateGroup",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Group object to be updated",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Group"
-            }
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Group not found"
-          },
-          "405": {
-            "description": "Validation Exception"
-          }
-        },
-        "security": [
-          {
-            "openLabImplicit": [
-              "admin:group"
-            ]
-          }
-        ]
-      },
       "get": {
-        "summary": "Get a bunch of gropus",
+        "summary": "Get all groups",
+        "operationId": "getGroups",
         "description": "Gets `Group` objects.\nOptional query param of **size** determines\nsize of returned array\n",
         "parameters": [
           {
             "name": "size",
             "in": "query",
             "description": "Size of array",
+            "required": false,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Nth group to start from",
             "required": false,
             "type": "number",
             "format": "double"
@@ -360,7 +326,7 @@
         "security": [
           {
             "openLabImplicit": [
-              "write:group",
+              "admin:group",
               "write:post",
               "read:post"
             ]
@@ -474,7 +440,7 @@
           {
             "openLabImplicit": [
               "read:group",
-              "write:group",
+              "admin:group",
               "write:post",
               "read:post"
             ]
@@ -518,7 +484,7 @@
           {
             "openLabImplicit": [
               "read:group",
-              "write:group",
+              "admin:group",
               "write:post",
               "read:post"
             ]
@@ -657,7 +623,7 @@
         },
         "parameters": [
           {
-            "in": "query",
+            "in": "path",
             "name": "groupId",
             "description": "The name of the group to query users for",
             "required": true,
@@ -673,6 +639,50 @@
         ],
         "tags": [
           "user"
+        ]
+      }
+    },
+    "/groups/{groupId}/groups": {
+      "get": {
+        "summary": "Get all children groups for a given group",
+        "operationId": "getChildrenForGroup",
+        "description": "Gets all children of the specified\ngroup up to a maximum level of recursion.\n",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "type": "integer",
+            "format": "int64",
+            "required": true,
+            "description": "the id of the group to find children for"
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "description": "maximum number of levels to recurse, defaults to all children",
+            "required": false,
+            "type": "number",
+            "format": "double"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "title": "ArrayOfGroups",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Group"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "openLabImplicit": [
+              "read:group"
+            ]
+          }
         ]
       }
     },
@@ -953,7 +963,16 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userid",
+            "description": "userid of the user logging out",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
         "responses": {
           "200": {
             "description": "successful operation"

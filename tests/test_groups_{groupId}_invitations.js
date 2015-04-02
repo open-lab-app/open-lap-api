@@ -10,7 +10,7 @@ var test = require('tape'),
 test('api', function (t) {
     var app = express();
 
-
+    
     app.use(require('body-parser')());
 
     app.use(swaggerize({
@@ -18,18 +18,18 @@ test('api', function (t) {
         handlers: path.join(__dirname, '../handlers')
     }));
 
-
+    
     t.test('test post /groups/{groupId}/invitations', function (t) {
-
+        
         var body = {
         };
-
+        
         var responseSchema = enjoi({
             '$ref': "#/definitions/Invitation"
         }, {
             '#': require('../config/spec.json')
         });
-
+        
 
         request(app).post('/v1/groups/1/invitations')
         .expect(200).send(body)
@@ -42,6 +42,6 @@ test('api', function (t) {
             t.end();
         });
     });
-
+    
 
 });

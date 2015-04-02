@@ -11,7 +11,6 @@ test('api', function (t) {
     var app = express();
 
     
-    app.use(require('body-parser')());
 
     app.use(swaggerize({
         api: require('./../config/spec.json'),
@@ -19,23 +18,22 @@ test('api', function (t) {
     }));
 
     
-    t.test('test post /users/login', function (t) {
-        
-        var body = {
-        };
+    t.test('test get /groups/{groupId}/groups', function (t) {
         
         var responseSchema = enjoi({
-            'type': "string"
+            'title': "ArrayOfGroups", 
+            'type': "array", 
+            'items': {"$ref":"#/definitions/Group"}
         }, {
             '#': require('../config/spec.json')
         });
         
 
-        request(app).post('/v1/users/login')
-        .expect(200).send(body)
+        request(app).get('/v1/groups/1/groups')
+        .expect(200)
         .end(function (err, res) {
-            t.ok(!err, 'post /users/login no error.');
-            t.strictEqual(res.statusCode, 200, 'post /users/login 200 status.');
+            t.ok(!err, 'get /groups/{groupId}/groups no error.');
+            t.strictEqual(res.statusCode, 200, 'get /groups/{groupId}/groups 200 status.');
             responseSchema.validate(res.body, function (error) {
                 t.ok(!error, 'Response schema valid.');
             });

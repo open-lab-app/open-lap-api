@@ -4,7 +4,7 @@ function User(options) {
     if (!options) {
         options = {};
     }
-
+    
     this.id = options.id;
     this.username = options.username;
     this.profilePicURL = options.profilePicURL;
